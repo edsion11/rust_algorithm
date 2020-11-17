@@ -1,6 +1,4 @@
-include!("leetcode-135.rs");
+include!("leetcode-435.rs");
 fn main() {
-
-    let res = leetcode135();
-    println!("{}",res);
+    println!("{}",leetcode435(vec![vec![1,2], vec![2,3]]));
 }
