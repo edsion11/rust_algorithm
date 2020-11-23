@@ -1,4 +1,6 @@
-include!("./nativeSolution/leetcode-452.rs");
+include!("./nativeSolution/leetcode-763.rs");
 fn main() {
-    println!("{}",find_min_arrow_shots(vec![vec![10,16],vec![2,8],vec![1,6],vec![7,12]]));
+    let str = String::from("ababcbacadefegdehijhklij");
+    println!("{}",str);
+    println!("{:?}",partition_labels(str));
 }
