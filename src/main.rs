@@ -1,5 +1,5 @@
-include!("./nativeSolution/leetcode-665.rs");
+include!("./nativeSolution/leetcode-316.rs");
 fn main() {
-    let nums = vec![4,2,3];
-    println!("{:?}",check_possibility(nums));
+    let s = String::from("bcabc");
+    println!("{:?}",remove_duplicate_letters(s));
 }
