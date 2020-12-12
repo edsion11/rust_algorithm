@@ -1,7 +1,7 @@
-include!("./nativeSolution/leetcode-88.rs");
+include!("./nativeSolution/leetcode-887.rs");
 fn main() {
-    let mut nums1 = vec![1,2,3];
-    let mut nums2 = vec![2,5,6];
-    merge(&mut nums1,6,&mut nums2,3);
-    println!("{:?}",nums1);
+    let k: i32 = 12;
+    let n: i32 = 12;
+    let result: i32 = super_egg_drop(k, n);
+    println!("{}", result);
 }
