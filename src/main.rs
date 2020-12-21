@@ -1,8 +1,5 @@
-include!("./nativeSolution/leetcode-887.rs");
-// use std::collections::HashMap;
+include!("./nativeSolution/leetcode-29.rs");
 fn main() {
-    let k: i32 = 12;
-    let n: i32 = 12;
-    let result: i32 = super_egg_drop(k, n);
-    println!("{}", result);
+    let matrix = vec![vec![1,2,3],vec![4,5,6],vec![7,8,9]];
+    println!("{:?}",spiral_order(matrix));
 }
