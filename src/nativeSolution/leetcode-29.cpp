@@ -1,5 +1,7 @@
 #include <vector>
+#include <iostream>
 using namespace std;
+ 
 class Solution {
 public:
     vector<int> spiralOrder(vector<vector<int>>& matrix) {
@@ -34,5 +36,15 @@ public:
     }
 };
 int main(){
+    Solution solution1;
+    vector<vector<int>> matrix;
+    matrix = {{1,2,3},{4,5,6},{7,8,9}};
+    vector<int> result;
+    result = solution1.spiralOrder(matrix);
+    for (auto lin: result){
+        cout << lin;
+    }
+    cout << "\n";
     return 0;
 }
+// g++ leetcode-29.cpp -o a.out&&./a.out&&rm a.out
