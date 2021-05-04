@@ -1,6 +1,7 @@
 impl Solution {
     use std::collections::HashMap;
     pub fn super_egg_drop(k: i32, n: i32) -> i32 {
+<<<<<<< HEAD
         let mut dp: HashMap<(usize, usize), u64> = HashMap::new();
         let (mut left, mut right) = (1, n + 1);
         if k == 1 {
@@ -21,7 +22,29 @@ impl Solution {
             }
         };
         t as i32
+=======
+    let mut dp: HashMap<(usize, usize), u64> = HashMap::new();
+    let (mut left, mut right) = (1, n + 1);
+    if k == 1 {
+        return n;
+>>>>>>> b9ecbbbe26a39b96e6cbf1c59d0312ec835afc52
     }
+    pub fn drop_egg(k: usize, t: usize, dp: &mut HashMap<(usize, usize), u64>) -> u64 {
+        if let Some(floor) = dp.get(&(k, t)) {
+            return *floor;
+        }
+        if k == 1 || t == 1 {
+            return t as u64;
+        }
+<<<<<<< HEAD
+        let floor = drop_egg(k, t - 1, dp) + drop_egg(k - 1, t - 1, dp) + 1;
+        dp.insert((k, t), floor);
+        floor
+    }
+=======
+    };
+    t as i32
+}
     pub fn drop_egg(k: usize, t: usize, dp: &mut HashMap<(usize, usize), u64>) -> u64 {
         if let Some(floor) = dp.get(&(k, t)) {
             return *floor;
@@ -32,6 +55,7 @@ impl Solution {
         let floor = drop_egg(k, t - 1, dp) + drop_egg(k - 1, t - 1, dp) + 1;
         dp.insert((k, t), floor);
         floor
-    }
+}
+>>>>>>> b9ecbbbe26a39b96e6cbf1c59d0312ec835afc52
 
 }
