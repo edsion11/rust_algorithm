@@ -1,6 +1,6 @@
-include!("./nativeSolution/leetcode-76.rs");
+include!("./nativeSolution/leetcode-413.rs");
 fn main() {
-    let s = String::from( "ADOBECODEBANC");
-    let t = String::from("ABC");
-    println!("{:?}",min_window(s,t));
+    let nums = vec![1,3,5,7];
+    let result = number_of_arithmetic_slices(nums);
+    println!("{:?}",result);
 }
