@@ -1,6 +1,21 @@
-include!("./nativeSolution/leetcode-413.rs");
+use std::fs;
+
+// include!("./bin/nativeSolution/leetcode-64.rs");
+
+mod native_solution;
+
 fn main() {
-    let nums = vec![1,3,5,7];
-    let result = number_of_arithmetic_slices(nums);
-    println!("{:?}",result);
+    let paths = fs::read_dir("./src/native_solution")
+    .unwrap();
+    for path in paths{
+        let s = path.unwrap().path().display().to_string();
+        let name = &s.to_string()[..];
+        let next = name.replace("-", "_");
+        fs::rename(s,next).unwrap();
+        println!("Ok")
+    }
+    // let grid = vec![vec![1,3,1],vec![1,5,1],vec![4,2,1]];
+    // let result = native_solution::min_path_sum(grid);
+    // println!("{}",result);
 }
+ 
