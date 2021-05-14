@@ -47,3 +47,10 @@ pub fn min_window(s: String, t: String) -> String {
         return String::from(&s[begin..begin+minlen]);
     }
 }
+
+#[test]
+fn test_min_window(){
+    let s = "ADOBECODEBANC".to_string();
+    let t = "ABC".to_string();
+    println!("{}",min_window(s, t))
+}

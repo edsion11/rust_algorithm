@@ -1,6 +1,4 @@
-pub fn leetcode455(){
-    let g = [1,2,3];
-    let s = [1,2];
+pub fn find_content_children(g: Vec<i32>, s: Vec<i32>) -> i32 {
     let mut i =0;
     let mut j = 0;
     let mut result:i32 = 0;

@@ -11,3 +11,9 @@
     }
     ans
 }
+
+#[test]
+fn test_rob(){
+    let nums = vec![1,2,3,1];
+    println!("{:?}",self::rob(nums))
+}

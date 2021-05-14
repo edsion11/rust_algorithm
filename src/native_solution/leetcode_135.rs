@@ -1,4 +1,4 @@
-pub fn leetcode135(ratings: Vec<i32>) -> i32 {
+pub fn candy(ratings: Vec<i32>) -> i32 {
     let mut candies = Vec::new();
     let ratings = &ratings;
     for _item in ratings{
@@ -27,4 +27,11 @@ pub fn leetcode135(ratings: Vec<i32>) -> i32 {
         result+=item
     }
     result
+}
+
+#[test]
+fn test_candy(){
+    let ratings = vec![1,0,2];
+    let result = candy(ratings);
+    println!("{:?}",result)
 }

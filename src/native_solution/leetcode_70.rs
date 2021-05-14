@@ -28,3 +28,11 @@ pub fn climb_stairs(n: i32) -> i32 {
     }
     return cur;
 }
+
+#[test]
+fn test_climb_stairs(){
+    let n = 2;
+    if let Some(result) = Some(climb_stairs(n)){
+        println!("{}",result)
+    }
+}

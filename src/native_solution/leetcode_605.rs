@@ -1,4 +1,4 @@
-fn leetcode605(flowerbed: Vec<i32>, n: i32)->bool{
+pub fn can_place_flowers(flowerbed: Vec<i32>, n: i32)->bool{
     let mut count:i32 = 0;
     let mut _i = 0;
     while _i<flowerbed.len(){
