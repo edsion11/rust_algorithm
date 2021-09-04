@@ -1,5 +1,5 @@
 [package]
-name = "rust_demo"
+name = "rust_leeetcode"
 version = "0.1.0"
 authors = ["edsion11 <1447424545@qq.com>"]
 edition = "2018"
