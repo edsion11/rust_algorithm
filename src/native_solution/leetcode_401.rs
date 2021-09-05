@@ -1,3 +1,4 @@
+#[allow(dead_code)]
 pub fn add_strings(num1: String, num2: String) -> String {
     let mut res = Vec::new();
         let mut i = num1.len();

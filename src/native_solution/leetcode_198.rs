@@ -1,4 +1,5 @@
- pub fn rob(nums: Vec<i32>) -> i32 {
+#[allow(dead_code)]
+pub fn rob(nums: Vec<i32>) -> i32 {
     let len = nums.len();
     if len<=2{
         return nums.into_iter().max().unwrap_or(0);

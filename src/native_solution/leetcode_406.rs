@@ -1,3 +1,4 @@
+#[allow(dead_code)]
 pub fn reconstruct_queue(people: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
     if people.len()==0{
         return people

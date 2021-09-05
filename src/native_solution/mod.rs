@@ -18,6 +18,7 @@ mod leetcode_665;
 mod leetcode_763;
 mod leetcode_887;
 mod leetcode_401;
+mod leetocde_894;
 
 pub use self::leetcode_29::spiral_order;
 pub use self::leetcode_55::can_jump;
@@ -38,5 +39,6 @@ pub use self::leetcode_665::check_possibility;
 pub use self::leetcode_763::partition_labels;
 pub use self::leetcode_887::super_egg_drop;
 pub use self::leetcode_401::add_strings;
+pub use self::leetocde_894::all_possible_fbt;
 
 

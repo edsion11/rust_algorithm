@@ -14,6 +14,7 @@
 //     }
 //     climb_stairs(n-1)+climb_stairs(n-2)
 // }
+#[allow(dead_code)]
 pub fn climb_stairs(n: i32) -> i32 {
     if n<2{
         return 1

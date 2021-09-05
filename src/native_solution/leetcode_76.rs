@@ -1,3 +1,4 @@
+#[allow(dead_code)]
 pub fn min_window(s: String, t: String) -> String {
     use std::collections::HashMap;
     let mut left:usize=0;let mut right:usize=0;let mut begin:usize=0;

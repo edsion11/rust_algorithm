@@ -3,7 +3,19 @@
  *n:i32 楼层
  */
 use std::collections::HashMap;
+#[allow(dead_code)]
 pub fn super_egg_drop(k: i32, n: i32) -> i32 {
+    pub fn drop_egg(k: usize, t: usize, dp: &mut HashMap<(usize, usize), u64>) -> u64 {
+        if let Some(floor) = dp.get(&(k, t)) {
+            return *floor;
+        }
+        if k == 1 || t == 1 {
+            return t as u64;
+        }
+        let floor = drop_egg(k, t - 1, dp) + drop_egg(k - 1, t - 1, dp) + 1;
+        dp.insert((k, t), floor);
+        floor
+    }    
     let mut dp: HashMap<(usize, usize), u64> = HashMap::new();
     let (mut left, mut right) = (1, n + 1);
     if k == 1 {
@@ -24,15 +36,4 @@ pub fn super_egg_drop(k: i32, n: i32) -> i32 {
         }
     };
     t as i32
-}
-pub fn drop_egg(k: usize, t: usize, dp: &mut HashMap<(usize, usize), u64>) -> u64 {
-    if let Some(floor) = dp.get(&(k, t)) {
-        return *floor;
-    }
-    if k == 1 || t == 1 {
-        return t as u64;
-    }
-    let floor = drop_egg(k, t - 1, dp) + drop_egg(k - 1, t - 1, dp) + 1;
-    dp.insert((k, t), floor);
-    floor
 }

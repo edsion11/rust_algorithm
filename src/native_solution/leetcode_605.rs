@@ -1,3 +1,4 @@
+#[allow(dead_code)]
 pub fn can_place_flowers(flowerbed: Vec<i32>, n: i32)->bool{
     let mut count:i32 = 0;
     let mut _i = 0;

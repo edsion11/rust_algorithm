@@ -1,3 +1,4 @@
+#[allow(dead_code)]
 pub fn remove_duplicate_letters(s: String) -> String {
     let mut counts: [usize; 26] = [0; 26];
     for &b in s.as_bytes() {

@@ -1,4 +1,5 @@
-pub fn merge(nums1: &mut Vec<i32>, m: i32, nums2: &mut Vec<i32>, n: i32) {
+#[allow(dead_code)]
+pub fn merge(nums1: &mut Vec<i32>, _m: i32, nums2: &mut Vec<i32>, _n: i32) {
     let mut left = 0;
     let mut right = 0;
     while right<nums2.len()&&left<nums1.len(){

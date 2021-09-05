@@ -1,3 +1,4 @@
+#[allow(dead_code)]
 pub fn erase_overlap_intervals(intervals: Vec<Vec<i32>>) -> i32{
     if intervals.len()==0{
         return 0

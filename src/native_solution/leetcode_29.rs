@@ -1,3 +1,4 @@
+#[allow(dead_code)]
 pub fn spiral_order(matrix: Vec<Vec<i32>>) -> Vec<i32> {
     if matrix.len() == 0 {
         return vec![];

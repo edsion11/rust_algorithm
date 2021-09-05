@@ -1,3 +1,4 @@
+#[allow(dead_code)]
 pub fn check_possibility(nums: Vec<i32>) -> bool {
     if nums.len()<=2 {
         return true

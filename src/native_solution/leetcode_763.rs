@@ -1,3 +1,4 @@
+#[allow(dead_code)]
 pub fn partition_labels(s: String) -> Vec<i32> {
     let mut map = [0;26];
     for (i,c) in s.bytes().enumerate(){

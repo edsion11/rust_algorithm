@@ -1,3 +1,4 @@
+#[allow(dead_code)]
 pub fn candy(ratings: Vec<i32>) -> i32 {
     let mut candies = Vec::new();
     let ratings = &ratings;
