@@ -15,7 +15,7 @@ pub fn super_egg_drop(k: i32, n: i32) -> i32 {
         let floor = drop_egg(k, t - 1, dp) + drop_egg(k - 1, t - 1, dp) + 1;
         dp.insert((k, t), floor);
         floor
-    }    
+    }
     let mut dp: HashMap<(usize, usize), u64> = HashMap::new();
     let (mut left, mut right) = (1, n + 1);
     if k == 1 {

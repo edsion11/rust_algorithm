@@ -27,7 +27,6 @@ pub fn remove_duplicate_letters(s: String) -> String {
     v.iter().collect()
 }
 
-
 // use std::collections::BTreeSet;
 // use std::iter::FromIterator;
 

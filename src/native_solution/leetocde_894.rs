@@ -17,8 +17,8 @@ impl TreeNode {
     }
 }
 
-use std::rc::Rc;
 use std::cell::RefCell;
+use std::rc::Rc;
 
 pub fn all_possible_fbt(mut n: i32) -> Vec<Option<Rc<RefCell<TreeNode>>>> {
     if n % 2 == 0 {
@@ -48,8 +48,7 @@ pub fn all_possible_fbt(mut n: i32) -> Vec<Option<Rc<RefCell<TreeNode>>>> {
     res
 }
 
-
 #[test]
-fn test_all_possible_fbt(){
-    println!("{:?}",all_possible_fbt(3));
+fn test_all_possible_fbt() {
+    println!("{:?}", all_possible_fbt(3));
 }
