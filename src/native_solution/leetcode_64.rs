@@ -18,3 +18,9 @@ pub fn min_path_sum(grid: Vec<Vec<i32>>) -> i32 {
     }
     dp[m - 1][n - 1]
 }
+
+# [test]
+
+fn main(){
+    min_path_sum(vec![vec![1,2,3]]);
+}

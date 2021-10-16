@@ -1,14 +1,15 @@
-pub fn quick_sort(arr: Vec<&str>, lo: i32, hi: i32, d: i32) {
-    if lo > hi {
+
+pub fn quick_sort(arr: &mut Vec<&str>, lo: i32, hi: i32, d: i32) {
+    if lo >= hi {
         return;
     }
     let mut low_pointer = lo;
     let mut high_pointer = hi;
-    let p = char_at(arr[lo], d);
+    let p = char_at(arr[lo as usize], d);
     let mut i = lo + 1;
-    let cur: u8;
-    while i < hi_pointer {
-        cur = char_at(arr[i], d);
+    let mut cur: u8;
+    while i <= high_pointer {
+        cur = char_at(arr[i as usize], d);
         if cur < p {
             arr.swap(i as usize, low_pointer as usize);
             low_pointer += 1;
@@ -22,9 +23,9 @@ pub fn quick_sort(arr: Vec<&str>, lo: i32, hi: i32, d: i32) {
     }
     quick_sort(arr, lo, low_pointer, d);
     if p > 0 {
-        quick_sort(arr, low_pointer, high_pointer, d + 1);
+        quick_sort( arr, low_pointer, high_pointer, d + 1);
     }
-    quick_sort(arr, high_pointer + 1, hi, d);
+    quick_sort( arr, high_pointer + 1, hi, d);
 }
 
 pub fn char_at(str: &str, i: i32) -> u8 {
@@ -34,7 +35,8 @@ pub fn char_at(str: &str, i: i32) -> u8 {
 #[test]
 
 fn test_quick_sort() {
-    let mut arr = vec!["aa", "bb", "cc"];
-    quick_sort(arr, 0, arr.len() as i32 - 1, 0);
+    let mut arr = vec!["bb", "aa", "cc"];
+    let len = arr.len() as i32;
+    quick_sort(&mut arr, 0, len - 1, 0);
     println!("{:?}", arr);
 }
