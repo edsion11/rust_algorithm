@@ -1,2 +1,3 @@
-# rust_leetcode
-rust刷算法
+# rust_algorithm
+
+Algorithm from rust
