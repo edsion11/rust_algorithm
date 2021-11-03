@@ -19,7 +19,9 @@ mod leetcode_763;
 mod leetcode_88;
 mod leetcode_887;
 mod leetocde_894;
+mod leetcode_42;
 
+pub use self::leetcode_42::trap;
 pub use self::leetcode_135::candy;
 pub use self::leetcode_167::two_sum;
 pub use self::leetcode_29::spiral_order;
