@@ -18,7 +18,8 @@ mod leetcode_76;
 mod leetcode_763;
 mod leetcode_88;
 mod leetcode_887;
-mod leetocde_894;
+mod leetcode_894;
+mod leetcode_99;
 
 pub use self::leetcode_135::candy;
 pub use self::leetcode_167::two_sum;
@@ -39,4 +40,5 @@ pub use self::leetcode_76::min_window;
 pub use self::leetcode_763::partition_labels;
 pub use self::leetcode_88::merge;
 pub use self::leetcode_887::super_egg_drop;
-pub use self::leetocde_894::all_possible_fbt;
+pub use self::leetcode_894::all_possible_fbt;
+pub use self::leetcode_99::recover_tree;
