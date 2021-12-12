@@ -62,7 +62,7 @@ fn test_bucket(){
     fn bucket_sort_(arr: &mut [i32]) {
         bucket_sort(arr, |int| int / 4)
     }
-    let mut base_array = [4,3,2,1,6,4,2,3,6,7].to_vec();
+    let mut base_array = [4,3,2,1,6,4,2,3,6,7,4,1,2,5,6,3,2,1,1,5,6,6,1,2,6,6,4,1,12,5,6].to_vec();
     bucket_sort_(&mut base_array);
     println!("sort: {:?}", base_array);
 }
