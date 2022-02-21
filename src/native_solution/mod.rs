@@ -21,6 +21,8 @@ mod leetcode_887;
 mod leetcode_894;
 mod leetcode_99;
 mod leetcode_42;
+mod leetcode_33;
+mod leetcode_20;
 
 pub use self::leetcode_42::trap;
 pub use self::leetcode_42::trap_dp;
@@ -46,3 +48,5 @@ pub use self::leetcode_88::merge;
 pub use self::leetcode_887::super_egg_drop;
 pub use self::leetcode_894::all_possible_fbt;
 pub use self::leetcode_99::recover_tree;
+pub use self::leetcode_33::search;
+pub use self::leetcode_20::is_valid;
