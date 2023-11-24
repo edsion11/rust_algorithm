@@ -1,4 +1,4 @@
-use std::{borrow::Borrow, cell::RefCell, rc::Rc};
+use std::{ cell::RefCell, rc::Rc};
 
 // Definition for a binary tree node.
 #[derive(Debug, PartialEq, Eq)]
@@ -19,8 +19,9 @@ impl TreeNode {
     }
 }
 // 一个二叉搜索树的两个节点被替换，在不改变结构的情况下恢复
-pub fn recover_tree(root: Option<Rc<RefCell<TreeNode>>>) {
-    
+#[warn(dead_code)]
+pub fn recover_tree(_root: Option<Rc<RefCell<TreeNode>>>) {
+    println!("1");
 }
 
 // pub fn preorder(root: Option<Rc<RefCell<TreeNode>>>,  prev: Option<Rc<RefCell<TreeNode>>>, result: Vec<Option<Rc<RefCell<TreeNode>>>>){
@@ -39,19 +40,20 @@ pub fn recover_tree(root: Option<Rc<RefCell<TreeNode>>>) {
 
 #[test]
 fn test_preorder(){
-	let root = Some(Rc::new(RefCell::new(TreeNode{
+
+	let _root = Some(Rc::new(RefCell::new(TreeNode{
 		val: 2,
 		left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
 		right: Some(Rc::new(RefCell::new(TreeNode::new(3))))
 	})));
+    recover_tree(_root);
 	// preorder(root);
 }
-
-pub fn swap_tree_node(left: &Rc<RefCell<TreeNode>>, right: &Rc<RefCell<TreeNode>>){
-  let temp = right.as_ref().borrow().val.clone();
-  left.borrow_mut().val = right.as_ref().borrow().val.clone();
-  right.borrow_mut().val = temp;
-}
+// pub fn swap_tree_node(left: &Rc<RefCell<TreeNode>>, right: &Rc<RefCell<TreeNode>>){
+//   let temp = right.as_ref().borrow().val.clone();
+//   left.borrow_mut().val = right.as_ref().borrow().val.clone();
+//   right.borrow_mut().val = temp;
+// }
 #[test]
 fn test_swap_tree_node(){
 	let root = Some(Rc::new(RefCell::new(TreeNode{
@@ -74,7 +76,7 @@ fn test_swap_tree_node(){
 			r = node.as_ref().borrow().right.clone();
 		}
 	}
-  let mut prev: Rc<RefCell<TreeNode>> = result.remove(0);
+  let prev: Rc<RefCell<TreeNode>> = result.remove(0);
   let mut nodes: Vec<Rc<RefCell<TreeNode>>> = Vec::new();
   for item in result{
     let curval = item.as_ref().borrow().val.clone();

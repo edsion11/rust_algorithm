@@ -10,3 +10,10 @@ pub fn can_jump(nums: Vec<i32>) -> bool {
     }
     return last_valid_index == 0;
 }
+
+
+#[test]
+pub fn test_can_jump(){
+    let arr = vec![3,2,1,0,4];
+    println!("{:?}", can_jump(arr))
+}

@@ -33,6 +33,7 @@ fn _partition<T: Ord>(arr: &mut [T], low: isize, high: isize) -> isize{
     store_index
 }
 
+
 #[test]
 fn test_quick_sort(){
     let mut arr = [4,21,1,5,6,1,2,5,6,3];

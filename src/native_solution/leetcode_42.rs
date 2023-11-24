@@ -58,7 +58,7 @@ pub fn trap_two_pointer(height: Vec<i32>) -> i32{
     while left<right{
         left_max = left_max.max(height[left]);
         right_max = right_max.max(height[right]);
-        if (height[left] < height[right]) {
+        if height[left] < height[right] {
             res += left_max - height[left];
             left+=1;
         } else {
@@ -79,5 +79,7 @@ pub fn test_trap() {
 pub fn test_trap_dp() {
     let height = vec![4, 2, 0, 3, 2, 5];
     let result = trap_two_pointer(height);
-    println!("{:?}", result);
+    let height2 = vec![4, 2, 0, 3, 2, 5];
+    let result2 = trap_dp(height2);
+    println!("{:?} {:?}", result, result2);
 }

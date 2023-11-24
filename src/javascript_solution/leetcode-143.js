@@ -1,10 +1,10 @@
 function ListNode(val, next) {
-    this.val = (val===undefined ? 0 : val)
-    this.next = (next===undefined ? null : next)
-    this.show  = function (){
+    this.val = (val === undefined ? 0 : val)
+    this.next = (next === undefined ? null : next)
+    this.show = function () {
         let cur = this;
-        while(cur){
-            process.stdout.write(String(cur.val)+' ')
+        while (cur) {
+            process.stdout.write(String(cur.val) + ' ')
             cur = cur.next
         }
         process.stdout.write('\n')
@@ -12,21 +12,20 @@ function ListNode(val, next) {
 }
 
 
+const head = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5, new ListNode(6, new ListNode(7, new ListNode(8, new ListNode(9)))))))))
 
-const head = new ListNode(1,new ListNode(2,new ListNode(3, new ListNode(4, new ListNode(5, new ListNode(6, new ListNode(7,new ListNode(8,new ListNode(9)))))))))
-
-var reorderList = function(head) {
+var reorderList = function (head) {
     var stash = []
     let cur = head;
-    while(cur){
+    while (cur) {
         stash.push(cur)
         cur = cur.next
     }
-    var i=0,j=stash.length-1;
-    while(i<j){
+    var i = 0, j = stash.length - 1;
+    while (i < j) {
         stash[i].next = stash[j]
         i++
-        if(i===j){
+        if (i === j) {
             break
         }
         stash[j].next = stash[i]
@@ -36,18 +35,18 @@ var reorderList = function(head) {
     return head
 };
 
-var reorderList2 = function(head) {
+var reorderList2 = function (head) {
     let slow = head, fast = head;
-    while(fast.next&&fast.next.next){
+    while (fast.next && fast.next.next) {
         slow = slow.next
         fast = fast.next.next
     }
     let mid = slow.next;
     slow.next = null;
-    const reverseList = (head)=>{
-        if(!head||!head.next){
+    const reverseList = (head) => {
+        if (!head || !head.next) {
             return head
-        }else{
+        } else {
             let res = reverseList(head.next)
             head.next.next = head
             head.next = null
@@ -57,7 +56,7 @@ var reorderList2 = function(head) {
     let reversedMid = reverseList(mid)
     let left = head;
     let right = reversedMid;
-    while(left&&right){
+    while (left && right) {
         let leftHeadNext = left.next
         let rightHeadNext = right.next
         left.next = right

@@ -4,6 +4,8 @@
  * [88] 合并两个有序数组
  */
 
+use std::collections::HashMap;
+
 // @lc code=start
 impl Solution {
     pub fn merge(nums1: &mut Vec<i32>, m: i32, nums2: &mut Vec<i32>, n: i32) {
