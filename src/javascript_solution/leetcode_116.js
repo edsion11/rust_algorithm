@@ -1,8 +1,7 @@
-
+// Solution-1: 利用队列, 层序遍历。时间复杂度O(n), 空间复杂度O(n)
 var connect = function(root) {
     if(root===null) return root
     const queue = [root]
-    console.log(queue)
     while(queue.length>0){
         const len = queue.length
 
@@ -21,4 +20,24 @@ var connect = function(root) {
         }
     }
     return root
+};
+
+// Solution-2: 利用已经建立的next指针，时间复杂度O(n), 空间复杂度O(1)
+var connect = function(root) {
+    if(!root) return root
+   let leftHead = root
+   while(leftHead.left!==null){
+       let node = leftHead
+       while(node!==null){
+           if(node.left){
+               node.left.next = node.right
+           }
+           if(node.next){
+               node.right.next = node.next.left
+           }
+           node = node.next
+       }
+       leftHead = leftHead.left
+   }
+   return root
 };
