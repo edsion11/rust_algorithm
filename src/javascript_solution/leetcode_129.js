@@ -19,3 +19,24 @@ var sumNumbers = function(root) {
     }
     return dfs(root, 0)
 };
+
+var sumNumbers = function(root) {
+    const res = []
+    const dfs = (root, sum) =>{
+        if(!root) return 0;
+        sum = sum+root.val;
+        if(!root.left && !root.right){
+            res.push(sum)
+        };
+        if(root.left){
+            dfs(root.left, sum)
+        }
+        if(root.right){
+            dfs(root.right, sum)
+        }
+    }
+    dfs(root, '')
+   res.reduce((prev, cur) =>{
+    return prev + cur
+   }, 0)
+};
