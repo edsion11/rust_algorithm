@@ -36,7 +36,7 @@ var sumNumbers = function(root) {
         }
     }
     dfs(root, '')
-   res.reduce((prev, cur) =>{
+   return res.reduce((prev, cur) =>{
     return prev + cur
    }, 0)
 };
