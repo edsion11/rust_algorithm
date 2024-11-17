@@ -22,7 +22,7 @@ var minFlips = function(grid) {
             ans += Math.min(cnt1, 4 - cnt1);
         }
     }
-    let diff = 0, cnt1 = 0;
+    let diff = 0; cnt1 = 0;
     if (m % 2 === 1) {
         for (let j = 0; j < Math.floor(n / 2); j++) {
             if (grid[Math.floor(m / 2)][j] ^ grid[Math.floor(m / 2)][n - 1 - j]) {
