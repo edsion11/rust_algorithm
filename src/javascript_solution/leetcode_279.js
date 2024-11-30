@@ -9,15 +9,19 @@
  * @return {number}
  */
 var numSquares = function(n) {
-    const f = new Array(n + 1).fill(0);
+    const dp = new Array(n + 1).fill(0);
+    // 计算每个dp[i]的值
     for (let i = 1; i <= n; i++) {
-        let minn = Number.MAX_VALUE;
+        let min = Number.MAX_VALUE;
+        // 遍历所有的平方数
         for (let j = 1; j * j <= i; j++) {
-            minn = Math.min(minn, f[i - j * j]);
+            // 状态转移方程 => dp[i] = Math.min(dp[i], dp[i - j * j] + 1)
+            min = Math.min(min, dp[i - j * j]);
         }
-        f[i] = minn + 1;
+        // 取所有当前数字减去平方数的最小值 + 1
+        dp[i] = min + 1;
     }
-    return f[n];
+    return dp[n];
 };
 console.log(numSquares(12)); // 3
 console.log(numSquares(13)); // 2
