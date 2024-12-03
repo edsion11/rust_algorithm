@@ -32,4 +32,4 @@ var maxProfit = function (k, prices) {
 };
 // console.log(maxProfit(2, [2, 4, 1])) // 2
 // console.log(maxProfit(2, [3, 2, 6, 5, 0, 3])) // 7
-console.log(maxProfit(4, [1, 2, 4, 2, 5, 7, 2, 4, 9, 0])) // 13
+console.log(maxProfit(4, [1, 2, 4, 2, 5, 7, 2, 4, 9, 0])) // 15
