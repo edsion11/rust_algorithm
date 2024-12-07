@@ -33,6 +33,15 @@ var reverseStr = function (s, k) {
 }
 // 循环遍历字符串，每次取出2k个字符，前k个字符反转，后k个字符不变
 var reverseStr = function(s, k) {
+    const reverse = (arr, left, right) => {
+        while (left < right) {
+            const temp = arr[left];
+            arr[left] = arr[right];
+            arr[right] = temp;
+            left++;
+            right--;
+        }
+    }
     const n = s.length;
     const arr = Array.from(s);
     for (let i = 0; i < n; i += 2 * k) {
@@ -41,14 +50,17 @@ var reverseStr = function(s, k) {
     return arr.join('');
 };
 
-const reverse = (arr, left, right) => {
-    while (left < right) {
-        const temp = arr[left];
-        arr[left] = arr[right];
-        arr[right] = temp;
-        left++;
-        right--;
+var reverseStr = function(s, k) {
+    const reverse = (str) => {
+        return str.split('').reverse().join('');
     }
+    let res = ''
+    for (let i = 0; i < s.length; i += 2 * k) {
+        res = res + reverse(s.slice(i, i + k)) + s.slice(i + k, i + 2 * k)
+    }
+    return res
 }
+
+
 console.log(reverseStr("abcdefg", 2)); // "bacdfeg"
 console.log(reverseStr("abcd", 2)); // "bacd"
