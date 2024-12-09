@@ -17,9 +17,7 @@ var nthSuperUglyNumber = function(n, primes) {
   for(let i=2;i<=n;i++){
       const nums = primes.map((prime, index) => dp[pointers[index]]*prime);
       dp[i] = Math.min(...nums);
-      nums.forEach((num, index) => {
-          if(dp[i]===num) pointers[index]++;
-      });
+      pointers[nums.indexOf(num)]++;
   }
   return dp[n];
 };
