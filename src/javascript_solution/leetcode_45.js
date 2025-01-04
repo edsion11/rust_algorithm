@@ -28,5 +28,48 @@ var jump = function(nums) {
   return dp[n - 1];
 };
 
+
+// DFS
+var jump = function(nums) {
+  if (nums.length <= 1) return 0;
+    
+  let minJumps = Infinity;
+  // index代表当前下表，jumps代表已经跳的次数
+  const dfs = (index, jumps) => {
+      // 到达终点
+      if (index >= nums.length - 1) {
+          minJumps = Math.min(minJumps, jumps);
+          return;
+      }
+      // 剪枝：如果当前跳跃次数已经大于等于已知最小值，停止搜索
+      if (jumps >= minJumps) return;
+      
+      // 尝试所有可能的跳跃距离
+      for (let i = nums[index]; i >= 1; i--) {
+          dfs(index + i, jumps + 1);
+      }
+  };
+  
+  dfs(0, 0);
+  return minJumps;
+}
+
+// 贪心算法
+var jump = function(nums){
+  if(nums.length<=1) return 0
+  let max = 0;
+  let end = 0;
+  let res = 0
+  for(let i=0;i<nums.length-1;i++){
+    max = Math.max(max, i+nums[i])
+    if(i===end){
+      end = max
+      res++
+    }
+  }
+  return res
+}
+
+
 console.log(jump([2,3,1,1,4])) // 2
 console.log(jump([2,3,0,1,4])) // 2
