@@ -10,9 +10,32 @@
  */
 // ans = max(ans[i]*nums[i], Math.max())
 var maxSubArray = function(nums) {
-    
+    let max = nums[0];
+    for(let i=0;i<nums.length;i++){
+        let sum = 0;
+        for(j = i; j<nums.length;j++){
+            sum+=nums[j];
+            max = Math.max(max, sum);
+        }
+    }
+    return max;
 }
 
-console.log()
+// ==> 优化为前缀和
+var maxSubArray = function(nums) {
+    let max = nums[0];
+    let sum = 0;
+    for(let i=0;i<nums.length;i++){
+        sum = Math.max(sum+nums[i], nums[i]);
+        max = Math.max(max, sum);
+    }
+    return max;
+}
+
+
+// test case
+console.log(maxSubArray([-2,1,-3,4,-1,2,1,-5,4])); // 6
+console.log(maxSubArray([1])); // 1
+console.log(maxSubArray([5,4,-1,7,8])); // 23
 
 
