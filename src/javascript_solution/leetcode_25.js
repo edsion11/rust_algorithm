@@ -20,6 +20,19 @@
  * @return {ListNode}
  */
 var reverseKGroup = function(head, k) {
+    if (!head || k === 1) return head;
+    const reverseList = (head, tail) => {
+        let prev = tail.next;
+        let curr = head;
+        while (curr !== tail) {
+            const next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        curr.next = prev;
+        return [tail, head];
+    }
     let dummy = new ListNode(0);
     dummy.next = head;
     let prev = dummy;
@@ -37,14 +50,47 @@ var reverseKGroup = function(head, k) {
         prev = newTail;
         curr = newTail.next;
     }
-    const reverseList = (head, tail) => {
-        while(head !== tail) {
-            const temp = head.next;
-            head.next = tail.next;
-            tail.next = head;
-            head = temp;
-        }
-        return [tail, head];
-    }
+
     return dummy.next;
 };
+
+var reverseKGroup = function(head, k) {
+    const reverseList = (head, tail) => {
+        // 递归
+        // 1->2->3  => 2->1->3
+        if(head === tail) {
+            return [head, tail];
+        }
+        const [newHead, newTail] = reverseList(head.next, tail);
+        const next = newTail.next;
+        head.next.next = head;
+        head.next = next;
+        return [newHead, head];
+     }
+    let dummy = new ListNode(0);
+    dummy.next = head;
+    let prev = dummy;
+    curr = head;
+    while(curr) {
+        let tail = curr;
+        for(let i = 1; i < k && tail; i++) {
+            tail = tail.next;
+        }
+        if(!tail) {
+            break;
+        }
+        const [newHead, newTail] = reverseList(curr, tail);
+        prev.next = newHead;
+        prev = newTail;
+        curr = newTail.next;
+    }
+
+    return dummy.next;
+};
+function ListNode(val, next) {
+    this.val = (val===undefined ? 0 : val)
+    this.next = (next===undefined ? null : next)
+}
+const tail = new ListNode(5);
+const head = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, tail))));
+console.log(reverseKGroup(head, 2)); // 2->1->4->3->5
