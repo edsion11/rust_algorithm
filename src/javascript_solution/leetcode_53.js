@@ -32,6 +32,17 @@ var maxSubArray = function(nums) {
     return max;
 }
 
+// ==> 动态规划
+// dp[i]表示以nums[i]结尾的最大子数组和
+var maxSubArray = function(nums) {
+    let dp = new Array(nums.length).fill(0)
+    dp[0] = nums[0]
+    for(let i=1;i<nums.length;i++){
+        dp[i] = Math.max(nums[i], dp[i-1]+nums[i])
+    }
+    return Math.max(...dp);
+}
+
 
 // test case
 console.log(maxSubArray([-2,1,-3,4,-1,2,1,-5,4])); // 6
