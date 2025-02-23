@@ -43,6 +43,12 @@ var minWindow = function(s, t) {
 
 // 滑动窗口
 var minWindow = function(s, t) {
+    // 思路：
+    // 1. 创建need数组表示子串需要的字符，needCount代表子串长度,window代表窗口内的字符状态
+    // 2. 首先创建窗口right向右移动，每次移动端count++，window[]++
+    // 3. 当count===needCount时表示，当前子串已符合要求，创建窗口左边界left
+    // 4. 维护窗口长度值，收缩窗口left++，当窗口不满足要求时right继续移动，继续循环至字符串遍历结束
+
     if (!s || !t || s.length < t.length) return "";
     
     const need = new Array(128).fill(0);
