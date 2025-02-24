@@ -23,3 +23,35 @@ var isSymmetric = function(root) {
     }
     return check(root, root);
 };
+
+
+// 迭代法
+var isSymmetric = function (root) {
+    if (!root) return true
+    const queue = [root]
+    while (queue.length) {
+        const data = []
+        let len = queue.length
+        while(len>0) {
+            const cur = queue.shift()
+            data.push(cur ? cur.val : 'a')
+            if (cur) {
+                if (cur.left) {
+                    queue.push(cur.left)
+                } else {
+                    queue.push(null)
+                }
+                if (cur.right) {
+                    queue.push(cur.right)
+                } else {
+                    queue.push(null)
+                }
+            }
+            len--
+        }
+        if (data.join('')!==data.reverse().join('')) {
+            return false
+        }
+    }
+    return true
+};
