@@ -39,3 +39,20 @@ var kthSmallest = function(root, k) {
         root = root.right;
     }
 };
+
+var kthSmallest = function(root, k) {
+    let res;
+    let i = 0
+    const inOrder = (root)=>{
+        if(!root||res) return
+        inOrder(root.left)
+        i++
+        if(i===k){
+            res = root.val
+            return
+        }
+        return inOrder(root.right)
+    }
+    inOrder(root)
+    return res
+};
