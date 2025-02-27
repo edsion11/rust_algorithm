@@ -1,4 +1,4 @@
-const { ListNode, arrayToList } = require('../untils/listnode.js')
+const { ListNode, arrayToList } = require('../../untils/listnode.js')
 
 /**
  * Definition for singly-linked list.
